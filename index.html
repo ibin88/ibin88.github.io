@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ibin Menon Reghunandan | Portfolio</title>
+<meta name="description" content="Selected engineering work: robotics, control systems, simulation and mechatronics. Ibin Menon Reghunandan, Melbourne." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#0f2138; --navy-2:#15294a; --ink:#1a2b45; --body:#41506a;
+    --teal:#1c9c99; --teal-d:#0f7c7a; --line:#e2e7ef; --bg:#f6f8fb; --card:#ffffff;
+    --muted:#7c8aa3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--body);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4,.display{font-family:'Archivo',sans-serif;color:var(--ink);line-height:1.1;letter-spacing:-.01em}
+  a{color:var(--teal-d);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 28px}
+  .kicker{font-family:'Archivo',sans-serif;font-weight:700;letter-spacing:.22em;text-transform:uppercase;font-size:12px;color:var(--teal)}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(15,33,56,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  nav .brand{font-family:'Archivo';font-weight:800;color:#fff;font-size:15px;letter-spacing:.02em}
+  nav .links{display:flex;gap:26px}
+  nav .links a{color:#c3cede;font-size:14px;font-weight:500}
+  nav .links a:hover{color:#fff;text-decoration:none}
+  @media(max-width:720px){nav .links{display:none}}
+
+  /* HERO */
+  header.hero{background:linear-gradient(160deg,#0f2138 0%,#16294c 100%);color:#fff;padding:96px 0 84px;position:relative;overflow:hidden}
+  header.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(28,156,153,.28),transparent 62%)}
+  .hero h1{color:#fff;font-weight:900;font-size:clamp(42px,7vw,78px);margin:14px 0 22px}
+  .hero .role{color:#9fb0c6;font-family:'Archivo';font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:14px}
+  .hero .lead{color:#cdd8e8;max-width:620px;font-size:18px;margin-top:6px}
+  .hero .bar{width:66px;height:5px;background:var(--teal);border-radius:3px;margin:8px 0 26px}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .btn{display:inline-block;font-family:'Archivo';font-weight:700;font-size:14px;padding:13px 24px;border-radius:8px;letter-spacing:.02em}
+  .btn.primary{background:var(--teal);color:#fff}
+  .btn.primary:hover{background:var(--teal-d);text-decoration:none}
+  .btn.ghost{border:1.5px solid rgba(255,255,255,.28);color:#fff}
+  .btn.ghost:hover{border-color:#fff;text-decoration:none}
+
+  /* SECTIONS */
+  section{padding:76px 0}
+  .section-head{max-width:720px;margin-bottom:44px}
+  .section-head h2{font-size:clamp(30px,4vw,42px);font-weight:800;margin:10px 0 16px}
+  .section-head .bar{width:56px;height:5px;background:var(--teal);border-radius:3px}
+
+  /* ABOUT */
+  #about{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:start}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr;gap:36px}}
+  .about-grid p{font-size:17px;margin-bottom:16px}
+  .principles{display:grid;gap:16px}
+  .principle{border-left:3px solid var(--teal);padding:4px 0 4px 16px;color:var(--ink);font-weight:500}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{border:1.5px solid var(--line);border-radius:22px;padding:8px 16px;font-size:13.5px;font-weight:600;color:var(--ink);background:#fff}
+
+  /* PROJECTS */
+  .project{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:34px;box-shadow:0 1px 2px rgba(16,33,56,.04)}
+  .project .pad{padding:34px 38px}
+  @media(max-width:620px){.project .pad{padding:26px 22px}}
+  .project .cat{color:var(--teal);font-family:'Archivo';font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:11.5px}
+  .project h3{font-size:clamp(24px,3.2vw,32px);font-weight:800;margin:8px 0 6px}
+  .project .meta{color:var(--muted);font-size:14px;font-weight:500;margin-bottom:20px}
+  .project .summary{font-size:16.5px;color:var(--ink);margin-bottom:22px}
+  .media{display:grid;gap:14px;margin:8px 0 26px}
+  .media.one{grid-template-columns:1fr}
+  .media.two{grid-template-columns:1fr 1fr}
+  .media.three{grid-template-columns:2fr 1fr 1fr}
+  @media(max-width:720px){.media.two,.media.three{grid-template-columns:1fr}}
+  .media figure{margin:0;background:#eef2f7;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .media img{display:block;width:100%;height:100%;object-fit:cover;max-height:340px}
+  .media figcaption{font-size:12.5px;color:var(--muted);padding:8px 12px;background:#fff;border-top:1px solid var(--line)}
+  .detail{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:24px}
+  @media(max-width:620px){.detail{grid-template-columns:1fr;gap:16px}}
+  .detail h4{font-family:'Archivo';font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:11.5px;color:var(--teal);margin-bottom:6px}
+  .specs{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--line);margin-top:6px}
+  .spec{flex:1;min-width:150px;padding:16px 20px 0 0}
+  .spec .k{font-family:'Archivo';font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:10.5px;color:var(--teal)}
+  .spec .v{color:var(--ink);font-weight:600;font-size:14.5px;margin-top:3px}
+  .tag-conf{display:inline-block;background:#fbeceb;color:#b4463f;font-size:11px;font-weight:700;padding:3px 9px;border-radius:5px;letter-spacing:.04em;margin-left:8px;vertical-align:middle}
+
+  /* schematic svg cards */
+  .svg-card{background:#f2f5f9;border:1px solid var(--line);border-radius:10px;padding:18px}
+
+  /* FOCUS / CONTACT */
+  footer{background:linear-gradient(160deg,#0f2138 0%,#16294c 100%);color:#fff;padding:88px 0 40px;position:relative;overflow:hidden}
+  footer::after{content:"";position:absolute;left:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(28,156,153,.22),transparent 62%)}
+  footer h2{color:#fff;font-size:clamp(30px,4.4vw,46px);font-weight:900;max-width:640px}
+  footer .bar{width:56px;height:5px;background:var(--teal);border-radius:3px;margin:18px 0 26px}
+  footer p{color:#cdd8e8;max-width:620px;font-size:17px;margin-bottom:16px}
+  .contact{display:flex;flex-wrap:wrap;gap:34px;margin-top:38px;padding-top:26px;border-top:1px solid rgba(255,255,255,.14)}
+  .contact .item .k{color:#8ea0ba;font-size:12px;font-family:'Archivo';font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  .contact .item .v{color:#fff;font-weight:600;margin-top:4px}
+  .contact .item a{color:#fff}
+  .copyright{color:#7488a4;font-size:13px;margin-top:40px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">Ibin Menon Reghunandan</span>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#focus">Focus</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="kicker" style="color:#5fd0cc">Portfolio</div>
+    <h1>Ibin Menon<br>Reghunandan</h1>
+    <div class="bar"></div>
+    <div class="role">Robotics · Control Systems · Simulation · Mechatronics</div>
+    <p class="lead">Selected engineering work: taking concepts to reliable, working systems, from modelling and control through to validated hardware.</p>
+    <div class="cta">
+      <a class="btn primary" href="#work">View selected work</a>
+      <a class="btn ghost" href="mailto:ibinmenon57@gmail.com">Get in touch</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="kicker">About</div>
+        <h2 style="font-size:clamp(28px,3.6vw,38px);font-weight:800;margin:12px 0 20px">Systems &amp; Robotics Engineer</h2>
+        <p>I am a systems-focused engineer working across robotics, control, embedded systems and mechanical design. What I do best is take a problem end to end, from kinematics and modelling through actuators, electronics and the real constraints of hardware, and turn it into something that actually runs.</p>
+        <p>I have built robotic systems, vehicle drivetrains, feasibility models and control-oriented prototypes, usually in multidisciplinary teams working under genuine limits on scope, time and budget. I am happiest in hands-on engineering, where iteration and practical problem-solving matter more than narrow specialisation.</p>
+        <div class="chips">
+          <span class="chip">Control &amp; motion sequencing</span>
+          <span class="chip">Modelling, simulation &amp; ML</span>
+          <span class="chip">Mechatronic system integration</span>
+          <span class="chip">Mechanism &amp; machine design</span>
+          <span class="chip">Embedded prototyping</span>
+        </div>
+      </div>
+      <div>
+        <div class="kicker">How I work</div>
+        <div class="principles" style="margin-top:16px">
+          <div class="principle">Feasibility first: I look for where a design fails before I optimise it.</div>
+          <div class="principle">Simple and robust beats clever and fragile, every time.</div>
+          <div class="principle">Built to run: success is measured on hardware, not on paper.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Selected Work</div>
+      <h2>Seven projects, one throughline</h2>
+      <p style="font-size:17px">Concept to constraint to working system, across control, robotics, modelling and mechanism design.</p>
+    </div>
+
+    <!-- 1. WEAVING -->
+    <article class="project">
+      <div class="pad">
+        <div class="cat">Control Systems · Case Study</div>
+        <h3>Automated Weaving Control System</h3>
+        <div class="meta">M.Eng thesis with Mr Trampoline Pty Ltd · RMIT University · 2026</div>
+        <p class="summary">A semi-automated industrial weaving machine whose heddle, rapier and comb mechanisms existed but moved independently. The brief: make them run as one coordinated, repeatable automated system.</p>
+        <div class="media three">
+          <figure><img src="images/p03_0.jpg" alt="Prototype weaving machine on the factory floor"><figcaption>Prototype weaving machine: four stepper-driven axes under one Arduino controller</figcaption></figure>
+          <figure><img src="images/p03_1.jpg" alt="Custom Arduino control PCB"><figcaption>Custom Arduino-based control PCB</figcaption></figure>
+          <figure><img src="images/p03_2_1934x1035.png" alt="Trapezoidal motion profile plot"><figcaption>Trapezoidal motion profile</figcaption></figure>
+        </div>
+        <div class="detail">
+          <div><h4>Approach</h4><p>Treated as a mechanically-coupled, open-loop sequencing problem on stepper-driven axes. Each axis was characterised on the bench (homing, limit handling, trapezoidal motion), then folded into a master sequencer driving the full pick cycle (shed open → rapier insertion → beat-up → shed exchange) directly from an Arduino, no PC in the loop.</p></div>
+          <div><h4>Outcome</h4><p>A repeatable, collision-free weaving cycle across all three axes, with deterministic homing and over-travel protection, and a fab-ready control board: a working baseline the next iteration builds on.</p></div>
+        </div>
+        <div class="specs">
+          <div class="spec"><div class="k">Architecture</div><div class="v">4 stepper axes, 1 sequencer</div></div>
+          <div class="spec"><div class="k">Hardware</div><div class="v">Custom Arduino control PCB</div></div>
+          <div class="spec"><div class="k">Result</div><div class="v">Collision-free pick cycle</div></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2. DUAL ARM -->
+    <article class="project">
+      <div class="pad">
+        <div class="cat">Robotics · Published Research</div>
+        <h3>Dual-Arm Coordinated Robot</h3>
+        <div class="meta">JAMRIS, 2019 · NIT Calicut, India</div>
+        <p class="summary">Many everyday tasks need two hands working together, which is difficult for people with limb loss or motor impairment. This project showed that coordinated bimanual manipulation is achievable with a compact, low-cost anthropomorphic robot.</p>
+        <div class="media one">
+          <figure><img src="images/p04_1_547x488.png" alt="Dual-arm robot detecting, grasping and transferring an object" style="max-height:none;object-fit:contain;background:#fff;padding:10px"><figcaption>Detection, grasping and hand-to-hand object transfer sequence (from the published paper)</figcaption></figure>
+        </div>
+        <div class="detail">
+          <div><h4>System architecture</h4><p>Each arm used anthropomorphic joints chosen for predictable kinematics and manufacturability rather than maximum degrees of freedom, keeping control simple and behaviour repeatable.</p></div>
+          <div><h4>Coordination strategy</h4><p>The two arms were treated as a single coupled unit: one arm stabilises the object while the other solves the combined kinematic chain, giving collision-aware coordinated motion without heavy computation or learning-based methods.</p></div>
+        </div>
+        <div class="specs">
+          <div class="spec"><div class="k">Status</div><div class="v">Published, JAMRIS 2019 (pp. 52-64)</div></div>
+          <div class="spec"><div class="k">Design</div><div class="v">Low-cost, anthropomorphic</div></div>
+          <div class="spec"><div class="k">Capability</div><div class="v">Coordinated grasp &amp; transfer</div></div>
+        </div>
+        <p style="margin-top:18px"><a href="https://issuu.com/piap3/docs/jamris_4-2019-www" target="_blank" rel="noopener">Read the published paper (JAMRIS 2019) →</a></p>
+      </div>
+    </article>
+
+    <!-- 3. ENGINE EMISSIONS -->
+    <article class="project">
+      <div class="pad">
+        <div class="cat">Modelling · Machine Learning</div>
+        <h3>Engine Emissions Estimation</h3>
+        <div class="meta">TNO &amp; HAN University, Netherlands · 2021-2022</div>
+        <p class="summary">A MATLAB application that estimates instantaneous tailpipe emissions for heavy vehicles at low speed, to understand how a change in operating regime, such as electrification, would shift emissions over time.</p>
+        <div class="media one">
+          <figure><img src="images/p05_0_1559x863.png" alt="MATLAB application computing time-step emissions"><figcaption>The MATLAB application computing time-step emissions over a dynamic drive cycle (inputs and fleet data abstracted for confidentiality)</figcaption></figure>
+        </div>
+        <div class="detail">
+          <div><h4>What it estimates</h4><p>CO₂, NOₓ and ammonia under specific thermal conditions, computed at each time step from engine speed and load, pre- and post- exhaust-treatment states, and other operating indicators.</p></div>
+          <div><h4>Modelling approach</h4><p>Linear time-series (ARX) models could not capture the non-linear, state-dependent behaviour, so the model was extended to a recurrent neural network that tracks transitions between operating states.</p></div>
+        </div>
+        <div class="specs">
+          <div class="spec"><div class="k">Outputs</div><div class="v">CO₂ · NOₓ · NH₃</div></div>
+          <div class="spec"><div class="k">Models</div><div class="v">ARX → recurrent neural network</div></div>
+          <div class="spec"><div class="k">Built in</div><div class="v">MATLAB application</div></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4. WIND TURBINE -->
+    <article class="project">
+      <div class="pad">
+        <div class="cat">Systems · Feasibility Study</div>
+        <h3>Wind-Turbine-Blade Transport</h3>
+        <div class="meta">Ter Linden &amp; HAN University, Netherlands · 2020</div>
+        <p class="summary">Moving 120 m turbine blades through constrained roads is a systems problem: vehicle geometry, articulation, steering limits and road layout all interact. This decision-support study assessed whether a truck-and-dolly system could negotiate real road geometries within mechanical and spatial limits.</p>
+        <div class="media one">
+          <figure><img src="images/p06_0_1656x884.png" alt="Swept-path envelopes from the kinematic model"><figcaption>Swept-path envelopes from the kinematic model across representative low-speed manoeuvres</figcaption></figure>
+        </div>
+        <div class="detail">
+          <div><h4>Method</h4><p>The transport system was represented as a kinematic model: first a single-line stick model for gross articulation, then an extended representation with axle positions and wheel tracks.</p></div>
+          <div><h4>Evaluation</h4><p>Assessed across representative low-speed manoeuvres (large roundabouts and 90° turns) for relative articulation angles and swept-path envelopes, including whether a powered dolly would be required.</p></div>
+        </div>
+        <div class="specs">
+          <div class="spec"><div class="k">Payload</div><div class="v">120 m turbine blade</div></div>
+          <div class="spec"><div class="k">Model</div><div class="v">Stick → axle &amp; wheel-track</div></div>
+          <div class="spec"><div class="k">Assessed</div><div class="v">Swept paths, articulation, dolly</div></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5. MINERVA -->
+    <article class="project">
+      <div class="pad">
+        <div class="cat">Mechanism Design · Concept</div>
+        <h3>Riot-Control Vehicle · Deployable Mechanism <span class="tag-conf">Confidential concept</span></h3>
+        <div class="meta">Minerva Special Purpose Vehicles, Dubai · 2018</div>
+        <p class="summary">Early-stage design of a deployable mechanical system for a defence-oriented special-purpose vehicle, under incomplete and evolving requirements. The system carried human interaction, high loads and safety-critical deployment, so reliability and predictability mattered more than optimisation.</p>
+        <div class="media one">
+          <div class="svg-card">
+            <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto" font-family="Inter,sans-serif">
+              <rect x="290" y="110" width="150" height="90" rx="8" fill="#d7ecec" stroke="#1c9c99" stroke-width="2"/>
+              <text x="365" y="150" text-anchor="middle" font-weight="700" font-size="15" fill="#0f2138">Deployable</text>
+              <text x="365" y="170" text-anchor="middle" font-weight="700" font-size="15" fill="#0f2138">structure</text>
+              <rect x="560" y="120" width="130" height="70" rx="6" fill="#eef2f7" stroke="#15294a" stroke-width="1.5"/>
+              <text x="625" y="160" text-anchor="middle" font-size="13" fill="#15294a">Vehicle platform</text>
+              <line x1="560" y1="155" x2="442" y2="155" stroke="#1c9c99" stroke-width="2" marker-end="url(#ar)"/>
+              <text x="500" y="146" text-anchor="middle" font-size="11" fill="#0f7c7a">Hydraulic actuation</text>
+              <line x1="365" y1="110" x2="365" y2="55" stroke="#1c9c99" stroke-width="2" marker-end="url(#ar)"/>
+              <text x="365" y="42" text-anchor="middle" font-size="12" fill="#41506a">Vertical structural loads</text>
+              <line x1="290" y1="155" x2="205" y2="155" stroke="#1c9c99" stroke-width="2" marker-end="url(#ar)"/>
+              <text x="150" y="150" text-anchor="middle" font-size="12" fill="#41506a">External</text>
+              <text x="150" y="166" text-anchor="middle" font-size="12" fill="#41506a">human forces</text>
+              <line x1="365" y1="200" x2="365" y2="255" stroke="#1c9c99" stroke-width="2" marker-end="url(#ar)"/>
+              <text x="365" y="275" text-anchor="middle" font-size="12" fill="#41506a">Ground support / reaction</text>
+              <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#1c9c99"/></marker></defs>
+            </svg>
+            <div style="font-size:12.5px;color:var(--muted);margin-top:8px">Conceptual load and actuation schematic. Visual detail abstracted due to confidentiality.</div>
+          </div>
+        </div>
+        <div class="detail">
+          <div><h4>Scope of work</h4><p>Deployable structure integrated with the vehicle platform; hydraulic actuation under high load and low speed; load cases spanning structural self-weight and external human forces; sliding interfaces, bearing selection and jamming risk; and packaging behind the driver cabin.</p></div>
+          <div><h4>Design priority</h4><p>With safety-critical deployment and evolving requirements, the work prioritised reliability and predictable behaviour over optimisation, designing for the failure modes first.</p></div>
+        </div>
+        <div class="specs">
+          <div class="spec"><div class="k">Actuation</div><div class="v">Hydraulic, high-load, low-speed</div></div>
+          <div class="spec"><div class="k">Load cases</div><div class="v">Self-weight + external forces</div></div>
+          <div class="spec"><div class="k">Priority</div><div class="v">Reliability over optimisation</div></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6. BAJA -->
+    <article class="project">
+      <div class="pad">
+        <div class="cat">Mechanical · Vehicle Engineering</div>
+        <h3>BAJA SAE ATV · Drivetrain</h3>
+        <div class="meta">Team Unwired, NIT Calicut · 2016-2018</div>
+        <p class="summary">BAJA SAE pushes an off-road ATV on weight, manufacturability and drivetrain performance. I worked across the build, from hands-on chassis fabrication and fit-up to full drivetrain design and integration.</p>
+        <div class="media two">
+          <figure><img src="images/p07_0.jpg" alt="Competition ATV"><figcaption>The competition ATV</figcaption></figure>
+          <figure><img src="images/p07_1.jpg" alt="Drivetrain assembly during testing"><figcaption>Drivetrain assembly during build and testing</figcaption></figure>
+        </div>
+        <div class="detail">
+          <div><h4>Drivetrain &amp; testing</h4><p>The drivetrain paired a Honda Activa 125cc CVT with a two-stage reduction gearbox sized to pass every dynamic event, with gear ratios and FEM checks tuned for loaded hill-climbs and acceleration.</p></div>
+          <div><h4>Build &amp; validation</h4><p>Components were manufactured externally and assembled in-house, then validated through acceleration, braking and loaded hill-climb testing.</p></div>
+        </div>
+        <div class="specs">
+          <div class="spec"><div class="k">Drive</div><div class="v">Honda Activa 125cc CVT</div></div>
+          <div class="spec"><div class="k">Gearbox</div><div class="v">Two-stage reduction, FEM-checked</div></div>
+          <div class="spec"><div class="k">Validated</div><div class="v">Acceleration · braking · hill-climb</div></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 7. BLUE OASIS -->
+    <article class="project">
+      <div class="pad">
+        <div class="cat">Engineering Execution &amp; Delivery</div>
+        <h3>Engineering Under Real Constraints</h3>
+        <div class="meta">Blue Oasis Aluminium &amp; Glass, Sharjah · 2022-2024</div>
+        <p class="summary">Across 30+ fabrication and installation projects, my role was bridging client intent and execution: turning loosely-defined requirements into feasible designs, quantities and timelines; producing CAD to communicate intent to suppliers and fabricators; and coordinating procurement and fabrication under live cash-flow constraints.</p>
+        <div class="detail">
+          <div><h4>The reality of it</h4><p>Work was shaped by evolving requirements, supplier variability, multi-trade coordination and information loss across handoffs. Engineering judgement extended well beyond technical correctness to sequencing, timing and communication.</p></div>
+          <div><h4>What it changed in how I work</h4><p>Clear, simple solutions over complex optimisation. Feasibility and failure considered early. Awareness of how decisions propagate downstream. Communication and intent, not just correctness.</p></div>
+        </div>
+        <div class="specs">
+          <div class="spec"><div class="k">Scale</div><div class="v">30+ fabrication &amp; install projects</div></div>
+          <div class="spec"><div class="k">Owned</div><div class="v">Scoping, costing → delivery</div></div>
+          <div class="spec"><div class="k">Context</div><div class="v">Multi-trade, live cash flow</div></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<footer id="focus">
+  <div class="wrap">
+    <a id="contact"></a>
+    <div class="kicker" style="color:#5fd0cc">Current focus &amp; direction</div>
+    <h2>Taking concepts to reliable, working systems.</h2>
+    <div class="bar"></div>
+    <p>I am completing a Master's in Robotics &amp; Mechatronics at RMIT, with a renewed focus on hands-on system development: how mechanical design, control logic, sensing and operational constraints interact in real systems.</p>
+    <p>I am looking to contribute as a systems-focused robotics and mechatronics engineer: close to the hardware, learning from deployment, and turning conceptual designs into reliable, working systems. Available for freelance and contract work.</p>
+    <div class="contact">
+      <div class="item"><div class="k">Email</div><div class="v"><a href="mailto:ibinmenon57@gmail.com">ibinmenon57@gmail.com</a></div></div>
+      <div class="item"><div class="k">Phone</div><div class="v">+61 436 807 517</div></div>
+      <div class="item"><div class="k">Based in</div><div class="v">Melbourne, Australia</div></div>
+    </div>
+    <div class="copyright">© 2026 Ibin Menon Reghunandan · Robotics · Control Systems · Mechatronics</div>
+  </div>
+</footer>
+
+</body>
+</html>
