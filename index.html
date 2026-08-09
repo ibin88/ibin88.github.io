@@ -76,7 +76,9 @@
   .media.three{grid-template-columns:2fr 1fr 1fr}
   @media(max-width:720px){.media.two,.media.three{grid-template-columns:1fr}}
   .media figure{margin:0;background:#eef2f7;border:1px solid var(--line);border-radius:10px;overflow:hidden}
-  .media img{display:block;width:100%;height:100%;object-fit:cover;max-height:340px}
+  .media img{display:block;width:100%;height:auto}
+  .media.one img{max-height:560px;object-fit:contain;background:#fff}
+  .media.two img,.media.three img{height:230px;object-fit:contain;background:#eef2f7}
   .media figcaption{font-size:12.5px;color:var(--muted);padding:8px 12px;background:#fff;border-top:1px solid var(--line)}
   .detail{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:24px}
   @media(max-width:620px){.detail{grid-template-columns:1fr;gap:16px}}
@@ -126,7 +128,7 @@
     <p class="lead">Selected engineering work: taking concepts to reliable, working systems, from modelling and control through to validated hardware.</p>
     <div class="cta">
       <a class="btn primary" href="#work">View selected work</a>
-      <a class="btn ghost" href="mailto:ibinmenon57@gmail.com">Get in touch</a>
+      <a class="btn ghost" href="#contact">Get in touch</a>
     </div>
   </div>
 </header>
@@ -163,7 +165,7 @@
   <div class="wrap">
     <div class="section-head">
       <div class="kicker">Selected Work</div>
-      <h2>Seven projects, one throughline</h2>
+      <h2>Eight projects, one throughline</h2>
       <p style="font-size:17px">Concept to constraint to working system, across control, robotics, modelling and mechanism design.</p>
     </div>
 
@@ -191,7 +193,28 @@
       </div>
     </article>
 
-    <!-- 2. DUAL ARM -->
+    <!-- 2. ZOO API MOUNTER -->
+    <article class="project">
+      <div class="pad">
+        <div class="cat">AI-Generated CAD · Verification</div>
+        <h3>ZooMounter: AI-Generated Mounting Plate Verification</h3>
+        <div class="meta">Zoo API Makeathon · 2026</div>
+        <p class="summary">A tool that turns vague mounting problems into engineered reality: specify a motor, bearing, or compute board, a load, and a material; the system generates a mounting plate via Zoo's Agent API, then independently verifies the AI-generated geometry against structural and positional specs before returning a verified CAD model.</p>
+        <div class="detail">
+          <div><h4>The problem</h4><p>AI-generated CAD is impressive but untrustworthy: a plausible-looking mounting plate might have holes in the wrong place or insufficient thickness under load. This tool closes that gap by embedding engineering checks (cantilever bending, bolt-hole position verification, bounding-box constraints) directly into the generation pipeline.</p></div>
+          <div><h4>The approach</h4><p>Integrate Zoo's three APIs meaningfully: Agent API generates KCL from a fully-constrained spec (every hole coordinate explicit, not vague); Engine API executes the KCL into a STEP export; File Format API then runs three independent verification checks (hole positions, bounding box, volume) that catch both AI mistakes and geometry shifts.</p></div>
+        </div>
+        <div class="specs">
+          <div class="spec"><div class="k">Mount types</div><div class="v">NEMA motors, bearings, Raspberry Pi, VESA, custom</div></div>
+          <div class="spec"><div class="k">APIs used</div><div class="v">Agent · Engine · File Format</div></div>
+          <div class="spec"><div class="k">Verification</div><div class="v">Position (0.5mm), bounds, volume</div></div>
+          <div class="spec"><div class="k">Output</div><div class="v">KCL · STEP · inspection report</div></div>
+        </div>
+        <p style="margin-top:18px"><a href="https://github.com/ibin88/ZooMounter" target="_blank" rel="noopener">View on GitHub (MIT licensed) →</a></p>
+      </div>
+    </article>
+
+    <!-- 3. DUAL ARM -->
     <article class="project">
       <div class="pad">
         <div class="cat">Robotics · Published Research</div>
@@ -214,7 +237,7 @@
       </div>
     </article>
 
-    <!-- 3. ENGINE EMISSIONS -->
+    <!-- 4. ENGINE EMISSIONS -->
     <article class="project">
       <div class="pad">
         <div class="cat">Modelling · Machine Learning</div>
@@ -236,7 +259,7 @@
       </div>
     </article>
 
-    <!-- 4. WIND TURBINE -->
+    <!-- 5. WIND TURBINE -->
     <article class="project">
       <div class="pad">
         <div class="cat">Systems · Feasibility Study</div>
@@ -258,7 +281,7 @@
       </div>
     </article>
 
-    <!-- 5. MINERVA -->
+    <!-- 6. MINERVA -->
     <article class="project">
       <div class="pad">
         <div class="cat">Mechanism Design · Concept</div>
@@ -299,20 +322,15 @@
       </div>
     </article>
 
-    <!-- 6. BAJA -->
+    <!-- 7. BAJA -->
     <article class="project">
       <div class="pad">
         <div class="cat">Mechanical · Vehicle Engineering</div>
         <h3>BAJA SAE ATV · Drivetrain</h3>
         <div class="meta">Team Unwired, NIT Calicut · 2016-2018</div>
-        <p class="summary">BAJA SAE pushes an off-road ATV on weight, manufacturability and drivetrain performance. I worked across the build, from hands-on chassis fabrication and fit-up to full drivetrain design and integration.</p>
-        <div class="media two">
-          <figure><img src="images/p07_0.jpg" alt="Competition ATV"><figcaption>The competition ATV</figcaption></figure>
-          <figure><img src="images/p07_1.jpg" alt="Drivetrain assembly during testing"><figcaption>Drivetrain assembly during build and testing</figcaption></figure>
-        </div>
-        <div class="detail">
-          <div><h4>Drivetrain &amp; testing</h4><p>The drivetrain paired a Honda Activa 125cc CVT with a two-stage reduction gearbox sized to pass every dynamic event, with gear ratios and FEM checks tuned for loaded hill-climbs and acceleration.</p></div>
-          <div><h4>Build &amp; validation</h4><p>Components were manufactured externally and assembled in-house, then validated through acceleration, braking and loaded hill-climb testing.</p></div>
+        <p class="summary">Off-road ATV drivetrain design: paired a Honda Activa 125cc CVT with a two-stage reduction gearbox, sized for dynamic loading and validated through acceleration, braking and hill-climb testing.</p>
+        <div class="media one">
+          <figure><img src="images/p07_0.jpg" alt="Competition ATV"><figcaption>Competition ATV with integrated drivetrain</figcaption></figure>
         </div>
         <div class="specs">
           <div class="spec"><div class="k">Drive</div><div class="v">Honda Activa 125cc CVT</div></div>
@@ -322,7 +340,7 @@
       </div>
     </article>
 
-    <!-- 7. BLUE OASIS -->
+    <!-- 8. BLUE OASIS -->
     <article class="project">
       <div class="pad">
         <div class="cat">Engineering Execution &amp; Delivery</div>
