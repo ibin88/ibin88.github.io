@@ -165,7 +165,7 @@
   <div class="wrap">
     <div class="section-head">
       <div class="kicker">Selected Work</div>
-      <h2>Eight projects, one throughline</h2>
+      <h2>Nine projects, one throughline</h2>
       <p style="font-size:17px">Concept to constraint to working system, across control, robotics, modelling and mechanism design.</p>
     </div>
 
@@ -193,7 +193,36 @@
       </div>
     </article>
 
-    <!-- 2. ZOO API MOUNTER -->
+    <!-- 2. AFL KICKING TRAINER -->
+    <article class="project">
+      <div class="pad">
+        <div class="cat">Computer Vision · Sensor Fusion · Physical AI</div>
+        <h3>AFL Open-Play Kicking Trainer</h3>
+        <div class="meta">Productathon (AI Devices × Sports) · 2026 · Melbourne</div>
+        <p class="summary">A wearable-and-camera rig that measures kicking accuracy while the player is moving, not standing still, and tells them which part of their kicking action made them miss, within seconds of the ball being struck. Reactive target pads sit on the ground, one lights at random, and the athlete kicks to it on the move.</p>
+        <div class="media one">
+          <figure><img src="images/afl_readout.png" alt="Live coaching readout: ball trajectory, landing point, and kicking-leg kinematics" style="max-height:none;object-fit:contain;background:#0d0d0d;padding:0"><figcaption>The live coaching readout: chest-camera ball detection on the left, with trajectory, landing error and kicking-leg kinematics on the right</figcaption></figure>
+        </div>
+        <div class="media two">
+          <figure><img src="images/afl_rig.jpg" alt="The physical rig: chest wearable, ground targets and two cameras"><figcaption>The rig: chest unit with cue speaker and contact mic, leg IMU, ground targets and two cameras</figcaption></figure>
+          <figure><img src="images/afl_sync.png" alt="Audio cue, leg IMU and camera frames aligned on one shared clock"><figcaption>One shared clock: the cue tone, leg IMU and both camera streams aligned so the right frames and IMU window belong to each kick</figcaption></figure>
+        </div>
+        <div class="detail">
+          <div><h4>What it does</h4><p>The drill runs as a loop: a random pad lights as the cue, the player kicks to it, the pad registers the strike, the chest camera finds where the ball actually landed (including on a miss, and by how far in which direction), and the leg IMU captures the kick window. The readout then shows the outcome, the error vector, the reaction time from cue to ball contact, and how the kick kinematics compare against a published accurate-kick profile, in under three seconds.</p></div>
+          <div><h4>My contribution</h4><p>I built the computer-vision pipeline (ball landing detection and player position from the chest camera), the comparison and readout logic (kinematics against the reference, error vector, and the coaching statement), the one-clock synchronisation across camera, IMU and audio cue, and the system integration and interface. On a two-person team, my teammate handled the IMU-to-ESP sensor link that packaged the leg data to the host.</p></div>
+        </div>
+        <div class="specs">
+          <div class="spec"><div class="k">Sensing</div><div class="v">Chest camera, leg IMU, reactive pads</div></div>
+          <div class="spec"><div class="k">Sync</div><div class="v">One shared clock, all sensors</div></div>
+          <div class="spec"><div class="k">Readout</div><div class="v">Outcome, error vector, reaction time, technique</div></div>
+          <div class="spec"><div class="k">Latency</div><div class="v">Under 3 s from strike to feedback</div></div>
+        </div>
+        <p style="margin-top:18px;color:var(--muted);font-size:14px">Reference profile from Blair, Robertson, Duthie &amp; Ball (2020), <em>PLoS ONE</em>, an IMU-validated study of kicking biomechanics. The rig extends that validated measurement method from the closed set-shot to the open-play kick, comparing each athlete against their own baseline rather than fixed thresholds.</p>
+        <p style="margin-top:12px;font-size:14px">GitHub repository, demo footage and pitch materials available on request.</p>
+      </div>
+    </article>
+
+    <!-- 3. ZOO API MOUNTER -->
     <article class="project">
       <div class="pad">
         <div class="cat">AI-Generated CAD · Verification</div>
@@ -214,7 +243,7 @@
       </div>
     </article>
 
-    <!-- 3. DUAL ARM -->
+    <!-- 4. DUAL ARM -->
     <article class="project">
       <div class="pad">
         <div class="cat">Robotics · Published Research</div>
@@ -237,7 +266,7 @@
       </div>
     </article>
 
-    <!-- 4. ENGINE EMISSIONS -->
+    <!-- 5. ENGINE EMISSIONS -->
     <article class="project">
       <div class="pad">
         <div class="cat">Modelling · Machine Learning</div>
@@ -259,7 +288,7 @@
       </div>
     </article>
 
-    <!-- 5. WIND TURBINE -->
+    <!-- 6. WIND TURBINE -->
     <article class="project">
       <div class="pad">
         <div class="cat">Systems · Feasibility Study</div>
@@ -281,7 +310,7 @@
       </div>
     </article>
 
-    <!-- 6. MINERVA -->
+    <!-- 7. MINERVA -->
     <article class="project">
       <div class="pad">
         <div class="cat">Mechanism Design · Concept</div>
@@ -322,7 +351,7 @@
       </div>
     </article>
 
-    <!-- 7. BAJA -->
+    <!-- 8. BAJA -->
     <article class="project">
       <div class="pad">
         <div class="cat">Mechanical · Vehicle Engineering</div>
@@ -340,7 +369,7 @@
       </div>
     </article>
 
-    <!-- 8. BLUE OASIS -->
+    <!-- 9. BLUE OASIS -->
     <article class="project">
       <div class="pad">
         <div class="cat">Engineering Execution &amp; Delivery</div>
