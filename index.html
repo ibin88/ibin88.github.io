@@ -169,31 +169,7 @@
       <p style="font-size:17px">Concept to constraint to working system, across control, robotics, modelling and mechanism design.</p>
     </div>
 
-    <!-- 1. WEAVING -->
-    <article class="project">
-      <div class="pad">
-        <div class="cat">Control Systems · Case Study</div>
-        <h3>Automated Weaving Control System</h3>
-        <div class="meta">M.Eng thesis with Mr Trampoline Pty Ltd · RMIT University · 2026</div>
-        <p class="summary">A semi-automated industrial weaving machine whose heddle, rapier and comb mechanisms existed but moved independently. The brief: make them run as one coordinated, repeatable automated system.</p>
-        <div class="media three">
-          <figure><img src="images/p03_0.jpg" alt="Prototype weaving machine on the factory floor"><figcaption>Prototype weaving machine: four stepper-driven axes under one Arduino controller</figcaption></figure>
-          <figure><img src="images/p03_1.jpg" alt="Custom Arduino control PCB"><figcaption>Custom Arduino-based control PCB</figcaption></figure>
-          <figure><img src="images/p03_2_1934x1035.png" alt="Trapezoidal motion profile plot"><figcaption>Trapezoidal motion profile</figcaption></figure>
-        </div>
-        <div class="detail">
-          <div><h4>Approach</h4><p>Treated as a mechanically-coupled, open-loop sequencing problem on stepper-driven axes. Each axis was characterised on the bench (homing, limit handling, trapezoidal motion), then folded into a master sequencer driving the full pick cycle (shed open → rapier insertion → beat-up → shed exchange) directly from an Arduino, no PC in the loop.</p></div>
-          <div><h4>Outcome</h4><p>A repeatable, collision-free weaving cycle across all three axes, with deterministic homing and over-travel protection, and a fab-ready control board: a working baseline the next iteration builds on.</p></div>
-        </div>
-        <div class="specs">
-          <div class="spec"><div class="k">Architecture</div><div class="v">4 stepper axes, 1 sequencer</div></div>
-          <div class="spec"><div class="k">Hardware</div><div class="v">Custom Arduino control PCB</div></div>
-          <div class="spec"><div class="k">Result</div><div class="v">Collision-free pick cycle</div></div>
-        </div>
-      </div>
-    </article>
-
-    <!-- 2. AFL KICKING TRAINER -->
+    <!-- 1. AFL KICKING TRAINER -->
     <article class="project">
       <div class="pad">
         <div class="cat">Computer Vision · Sensor Fusion · Physical AI</div>
@@ -219,6 +195,30 @@
         </div>
         <p style="margin-top:18px;color:var(--muted);font-size:14px">Reference profile from Blair, Robertson, Duthie &amp; Ball (2020), <em>PLoS ONE</em>, an IMU-validated study of kicking biomechanics. The rig extends that validated measurement method from the closed set-shot to the open-play kick, comparing each athlete against their own baseline rather than fixed thresholds.</p>
         <p style="margin-top:12px;font-size:14px">GitHub repository, demo footage and pitch materials available on request.</p>
+      </div>
+    </article>
+
+    <!-- 2. WEAVING -->
+    <article class="project">
+      <div class="pad">
+        <div class="cat">Control Systems · Case Study</div>
+        <h3>Automated Weaving Control System</h3>
+        <div class="meta">M.Eng thesis with Mr Trampoline Pty Ltd · RMIT University · 2026</div>
+        <p class="summary">A semi-automated industrial weaving machine whose heddle, rapier and comb mechanisms existed but moved independently. The brief: make them run as one coordinated, repeatable automated system.</p>
+        <div class="media three">
+          <figure><img src="images/p03_0.jpg" alt="Prototype weaving machine on the factory floor"><figcaption>Prototype weaving machine: four stepper-driven axes under one Arduino controller</figcaption></figure>
+          <figure><img src="images/p03_1.jpg" alt="Custom Arduino control PCB"><figcaption>Custom Arduino-based control PCB</figcaption></figure>
+          <figure><img src="images/p03_2_1934x1035.png" alt="Trapezoidal motion profile plot"><figcaption>Trapezoidal motion profile</figcaption></figure>
+        </div>
+        <div class="detail">
+          <div><h4>Approach</h4><p>Treated as a mechanically-coupled, open-loop sequencing problem on stepper-driven axes. Each axis was characterised on the bench (homing, limit handling, trapezoidal motion), then folded into a master sequencer driving the full pick cycle (shed open → rapier insertion → beat-up → shed exchange) directly from an Arduino, no PC in the loop.</p></div>
+          <div><h4>Outcome</h4><p>A repeatable, collision-free weaving cycle across all three axes, with deterministic homing and over-travel protection, and a fab-ready control board: a working baseline the next iteration builds on.</p></div>
+        </div>
+        <div class="specs">
+          <div class="spec"><div class="k">Architecture</div><div class="v">4 stepper axes, 1 sequencer</div></div>
+          <div class="spec"><div class="k">Hardware</div><div class="v">Custom Arduino control PCB</div></div>
+          <div class="spec"><div class="k">Result</div><div class="v">Collision-free pick cycle</div></div>
+        </div>
       </div>
     </article>
 
